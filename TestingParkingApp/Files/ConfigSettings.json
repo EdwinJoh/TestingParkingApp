@@ -1,0 +1,15 @@
+{
+  "ParkingSpotSize": 4,
+  "ParkingHouseSize": 100,
+  "McSize": 2,
+  "CarSize": 4,
+  "BusSize": 16,
+  "BikeSize": 1,
+  "CarPrice": 20,
+  "McPrice": 10,
+  "BikePrice": 5,
+  "BusPrice": 80,
+  "FreeMin": 10,
+  "SpacesForLargeVehicle": 46,
+  "Currency": "CZK"
+}
