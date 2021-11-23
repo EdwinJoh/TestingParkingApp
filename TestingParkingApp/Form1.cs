@@ -134,6 +134,14 @@ namespace TestingParkingApp
                 txtRegBox.Text = "";
                 grpInput.Visible = false;
             }
+            else if (button == "Search Vehicle")
+            {
+                string search = house.SearchForeVehicle(txtRegBox.Text.ToUpper());
+                MessageBox.Show(search);
+                txtRegBox.Text = "";
+                grpInput.Visible=false;
+                Count--;
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -149,7 +157,7 @@ namespace TestingParkingApp
                 Count++;
                 foreach (ParkingSpot spot in house.ParkingList)
                 {
-                    if (spot.AvailableSize ==4)
+                    if (spot.AvailableSize == 4)
                     {
                         lstPHouse.Items.Add(spot.SpotNumber);
                     }
@@ -171,6 +179,21 @@ namespace TestingParkingApp
         private void btnMove_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (Count < 1)
+            {
+                button = "Search Vehicle";
+                grpInput.Visible = true;
+                Count++;
+            }
+            else
+            {
+                grpInput.Visible = false;
+                Count--;
+            }
         }
     }
     public enum SelectedType

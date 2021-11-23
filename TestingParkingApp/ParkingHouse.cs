@@ -360,6 +360,20 @@ namespace TestingParkingApp
             }
             return regNum;
         }
-      
+
+        public string SearchForeVehicle(string regNum)
+        {
+            foreach (ParkingSpot spot in ParkingList)
+            {
+                foreach (Vehicle vehicle in spot.vehicles)
+                {
+                    if (regNum == vehicle.RegNumber)
+                    {
+                        return $"Find your vehicle: {vehicle.RegNumber}. Its parked on parkingspot {spot.SpotNumber}";
+                    }
+                }
+            }
+            return null;
+        }
     }
 }
