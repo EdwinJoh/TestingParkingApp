@@ -139,7 +139,7 @@ namespace TestingParkingApp
                 string search = house.SearchForeVehicle(txtRegBox.Text.ToUpper());
                 MessageBox.Show(search);
                 txtRegBox.Text = "";
-                grpInput.Visible=false;
+                grpInput.Visible = false;
                 Count--;
             }
         }
@@ -159,7 +159,7 @@ namespace TestingParkingApp
                 {
                     if (spot.AvailableSize == 4)
                     {
-                        lstPHouse.Items.Add(spot.SpotNumber);
+                        lstPHouse.Items.Add($"{spot.SpotNumber}: Empty");
                     }
                     foreach (Vehicle vehicle in spot.vehicles)
                     {
@@ -178,7 +178,13 @@ namespace TestingParkingApp
 
         private void btnMove_Click(object sender, EventArgs e)
         {
-
+            
+            lstPHouse.Visible = true;
+            foreach (var item in house.ParkingList)
+            {
+                lstPHouse.Items.Add(item.SpotNumber);
+            }
+            lstPHouse.SelectedItem = null;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

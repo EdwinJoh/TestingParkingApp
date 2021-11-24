@@ -57,7 +57,7 @@ namespace TestingParkingApp
             }
             return message;
         }                           //Creating our diffrent vehicles
-        public string AddVehicle(Vehicle vehicle)                                            // Adding our vehicles to the parkinglot if space is available
+        public string AddVehicle(Vehicle vehicle)                                           // Adding our vehicles to the parkinglot if space is available
         {
             ParkingSpot spot = FirstAvailableSpace(vehicle);
             string regnum = CheckReg(vehicle.RegNumber);

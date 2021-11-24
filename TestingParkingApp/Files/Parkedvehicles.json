@@ -1,40 +1,40 @@
 [
   {
-    "vehicles": [
-      {
-        "RegNumber": "QWE123",
-        "size": 4,
-        "TimeIn": "2021-11-22T13:41:25.0976567+01:00",
-        "Price": 20
-      }
-    ],
-    "AvailableSize": 0,
+    "vehicles": [],
+    "AvailableSize": 4,
     "SpotNumber": 1,
     "Status": ""
   },
   {
     "vehicles": [],
-    "AvailableSize": 4,
+    "AvailableSize": 0,
     "SpotNumber": 2,
-    "Status": ""
+    "Status": "HEJ1233"
   },
   {
     "vehicles": [],
-    "AvailableSize": 4,
+    "AvailableSize": 0,
     "SpotNumber": 3,
-    "Status": ""
+    "Status": "HEJ1233"
   },
   {
     "vehicles": [],
-    "AvailableSize": 4,
+    "AvailableSize": 0,
     "SpotNumber": 4,
-    "Status": ""
+    "Status": "HEJ1233"
   },
   {
-    "vehicles": [],
-    "AvailableSize": 4,
+    "vehicles": [
+      {
+        "RegNumber": "HEJ1233",
+        "size": 16,
+        "TimeIn": "2021-11-23T07:56:55.1414942+01:00",
+        "Price": 80
+      }
+    ],
+    "AvailableSize": 0,
     "SpotNumber": 5,
-    "Status": ""
+    "Status": "HEJ1233"
   },
   {
     "vehicles": [],

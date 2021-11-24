@@ -45,6 +45,7 @@ namespace TestingParkingApp
                 return configurations;
             }
         }
+       
         internal static List<ParkingSpot>? ReadParkingList() // Read from our json file that have our parkinglist with our parked vehicles
         {
             if (File.Exists(ParkingListPath))
