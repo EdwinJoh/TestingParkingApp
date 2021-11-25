@@ -15,6 +15,7 @@ namespace TestingParkingApp
         private int Count = 0;
         private string button = "";
         private string vehicleType;
+        private string selectedVehicle;
         ParkingHouse house = new ParkingHouse();
 
 
@@ -178,13 +179,19 @@ namespace TestingParkingApp
 
         private void btnMove_Click(object sender, EventArgs e)
         {
-            
-            lstPHouse.Visible = true;
-            foreach (var item in house.ParkingList)
+            grpMove.Visible = true;
+            foreach (ParkingSpot spot in house.ParkingList)
             {
-                lstPHouse.Items.Add(item.SpotNumber);
+                if (spot.AvailableSize == 4)
+                {
+                    Pspots.Items.Add(spot.SpotNumber);
+                }
+                foreach (Vehicle vehicle in spot.vehicles)
+                {
+                    listveh.Items.Add(vehicle.RegNumber);
+                }
             }
-            lstPHouse.SelectedItem = null;
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -200,6 +207,39 @@ namespace TestingParkingApp
                 grpInput.Visible = false;
                 Count--;
             }
+        }
+
+        private void lstPHouse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Vehicles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMoveVeh_Click(object sender, EventArgs e)
+        {
+            string selectedItem = "";
+            int selectedIndex = 0;
+            selectedItem = (string)listveh.SelectedItem;
+            selectedIndex = (int)Pspots.SelectedItem;
+            (Vehicle found, ParkingSpot oldspot) = house.ExistRegnumber(selectedItem);
+            house.MoveVehicle(found, oldspot,selectedIndex);
+        }
+
+
+
+        private void Pspots_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listveh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
         }
     }
     public enum SelectedType

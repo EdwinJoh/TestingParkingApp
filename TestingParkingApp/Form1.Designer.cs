@@ -46,14 +46,19 @@
             this.btnMc = new System.Windows.Forms.Button();
             this.btnCar = new System.Windows.Forms.Button();
             this.lstPHouse = new System.Windows.Forms.ListBox();
+            this.btnMoveVeh = new System.Windows.Forms.Button();
+            this.grpMove = new System.Windows.Forms.GroupBox();
+            this.Pspots = new System.Windows.Forms.ListBox();
+            this.listveh = new System.Windows.Forms.ListBox();
             this.grpMenu.SuspendLayout();
             this.grpInput.SuspendLayout();
             this.grpSubmenu.SuspendLayout();
+            this.grpMove.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(342, 339);
+            this.btnLoad.Location = new System.Drawing.Point(330, 6);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(132, 23);
             this.btnLoad.TabIndex = 0;
@@ -235,17 +240,62 @@
             // 
             this.lstPHouse.FormattingEnabled = true;
             this.lstPHouse.ItemHeight = 15;
-            this.lstPHouse.Location = new System.Drawing.Point(556, 35);
+            this.lstPHouse.Location = new System.Drawing.Point(580, 35);
             this.lstPHouse.Name = "lstPHouse";
-            this.lstPHouse.Size = new System.Drawing.Size(186, 319);
+            this.lstPHouse.Size = new System.Drawing.Size(186, 214);
             this.lstPHouse.TabIndex = 9;
             this.lstPHouse.Visible = false;
+            this.lstPHouse.SelectedIndexChanged += new System.EventHandler(this.lstPHouse_SelectedIndexChanged);
+            // 
+            // btnMoveVeh
+            // 
+            this.btnMoveVeh.Location = new System.Drawing.Point(207, 79);
+            this.btnMoveVeh.Name = "btnMoveVeh";
+            this.btnMoveVeh.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveVeh.TabIndex = 11;
+            this.btnMoveVeh.Text = "Move";
+            this.btnMoveVeh.UseVisualStyleBackColor = true;
+            this.btnMoveVeh.Click += new System.EventHandler(this.btnMoveVeh_Click);
+            // 
+            // grpMove
+            // 
+            this.grpMove.Controls.Add(this.listveh);
+            this.grpMove.Controls.Add(this.Pspots);
+            this.grpMove.Controls.Add(this.btnMoveVeh);
+            this.grpMove.Location = new System.Drawing.Point(191, 261);
+            this.grpMove.Name = "grpMove";
+            this.grpMove.Size = new System.Drawing.Size(489, 177);
+            this.grpMove.TabIndex = 12;
+            this.grpMove.TabStop = false;
+            this.grpMove.Text = "Move Vehicles";
+            this.grpMove.Visible = false;
+            // 
+            // Pspots
+            // 
+            this.Pspots.FormattingEnabled = true;
+            this.Pspots.ItemHeight = 15;
+            this.Pspots.Location = new System.Drawing.Point(328, 53);
+            this.Pspots.Name = "Pspots";
+            this.Pspots.Size = new System.Drawing.Size(120, 94);
+            this.Pspots.TabIndex = 13;
+            this.Pspots.SelectedIndexChanged += new System.EventHandler(this.Pspots_SelectedIndexChanged);
+            // 
+            // listveh
+            // 
+            this.listveh.FormattingEnabled = true;
+            this.listveh.ItemHeight = 15;
+            this.listveh.Location = new System.Drawing.Point(46, 43);
+            this.listveh.Name = "listveh";
+            this.listveh.Size = new System.Drawing.Size(120, 94);
+            this.listveh.TabIndex = 14;
+            this.listveh.SelectedIndexChanged += new System.EventHandler(this.listveh_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grpMove);
             this.Controls.Add(this.lstPHouse);
             this.Controls.Add(this.grpSubmenu);
             this.Controls.Add(this.grpInput);
@@ -257,6 +307,7 @@
             this.grpInput.ResumeLayout(false);
             this.grpInput.PerformLayout();
             this.grpSubmenu.ResumeLayout(false);
+            this.grpMove.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -281,5 +332,9 @@
         private System.Windows.Forms.Button btnCar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox lstPHouse;
+        private System.Windows.Forms.Button btnMoveVeh;
+        private System.Windows.Forms.GroupBox grpMove;
+        private System.Windows.Forms.ListBox Pspots;
+        private System.Windows.Forms.ListBox listveh;
     }
 }
