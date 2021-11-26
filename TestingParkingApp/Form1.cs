@@ -183,6 +183,7 @@ namespace TestingParkingApp
             else
             {
                 lstPHouse.Visible = false;
+                lstPHouse.Items.Clear();
                 Count--;
             }
 
@@ -190,14 +191,23 @@ namespace TestingParkingApp
 
         private void btnMove_Click(object sender, EventArgs e)
         {
-            grpMove.Visible = true;
-            foreach (ParkingSpot spot in house.ParkingList)
+            if (Count < 1)
             {
-
-                foreach (Vehicle vehicle in spot.vehicles)
+                grpMove.Visible = true;
+                foreach (ParkingSpot spot in house.ParkingList)
                 {
-                    listveh.Items.Add(vehicle.RegNumber);
+                    foreach (Vehicle vehicle in spot.vehicles)
+                    {
+                        listveh.Items.Add(vehicle.RegNumber);
+                    }
                 }
+                Count++;
+            }
+            else
+            {
+                listveh.Items.Clear();
+                grpMove.Visible = false;
+                Count--;
             }
 
         }
@@ -260,7 +270,12 @@ namespace TestingParkingApp
                 }
                 else if (vehicle.size > settings.ParkingSpotSize)
                 {
-                    house.CheckSpotsInRow();
+                   List<ParkingSpot> temp = house.CheckSpotsInRow(vehicle);
+                    foreach (var spots in temp)
+                    {
+                        Pspots.Items.Add(spots.SpotNumber);
+                    }
+                        break;
                 }
             }
 

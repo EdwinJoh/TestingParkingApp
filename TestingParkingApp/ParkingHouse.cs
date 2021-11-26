@@ -206,9 +206,33 @@ namespace TestingParkingApp
 
         }                   // Moving vehicle, check if the vehicle is parked here. and move the vehicle if there is space in the new parking spot
 
-        internal void CheckSpotsInRow()
+        internal List<ParkingSpot> CheckSpotsInRow(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            //fixa så det inet är hårdkodade värden
+            List<ParkingSpot> spots = new List<ParkingSpot>();
+            List<ParkingSpot> busspots = new List<ParkingSpot>();
+
+            for (int i = 0; i < Settings.SpacesForLargeVehicle; i++)
+            {
+                if (ParkingList[i].AvailableSize == Settings.ParkingSpotSize)
+                {
+                    spots.Add(ParkingList[i]);
+                }
+                if (spots.Count == 4)
+                {
+                    foreach (var item in spots)
+                    {
+                        busspots.Add(item);
+                    }
+                    spots.Clear();
+                    continue;
+                }
+                else if (ParkingList[i].AvailableSize < Settings.ParkingSpotSize)
+                {
+                    spots.Clear();
+                }
+            }
+            return busspots;
         }
 
         public bool CheckNewSpot(int newspot, Vehicle vehicle, out ParkingSpot newSpot)    // Check the new spot when moving the vehicle to see if there is enough space in the new spot

@@ -19,15 +19,8 @@
     "Status": ""
   },
   {
-    "vehicles": [
-      {
-        "RegNumber": "GER123",
-        "size": 4,
-        "TimeIn": "2021-11-26T10:03:07.1636989+01:00",
-        "Price": 20
-      }
-    ],
-    "AvailableSize": 0,
+    "vehicles": [],
+    "AvailableSize": 4,
     "SpotNumber": 3,
     "Status": ""
   },
@@ -77,27 +70,34 @@
   },
   {
     "vehicles": [],
-    "AvailableSize": 4,
+    "AvailableSize": 0,
     "SpotNumber": 9,
-    "Status": ""
+    "Status": "KEK123"
   },
   {
     "vehicles": [],
-    "AvailableSize": 4,
+    "AvailableSize": 0,
     "SpotNumber": 10,
-    "Status": ""
+    "Status": "KEK123"
   },
   {
     "vehicles": [],
-    "AvailableSize": 4,
+    "AvailableSize": 0,
     "SpotNumber": 11,
-    "Status": ""
+    "Status": "KEK123"
   },
   {
-    "vehicles": [],
-    "AvailableSize": 4,
+    "vehicles": [
+      {
+        "RegNumber": "KEK123",
+        "size": 16,
+        "TimeIn": "2021-11-26T19:38:24.5028408+01:00",
+        "Price": 80
+      }
+    ],
+    "AvailableSize": 0,
     "SpotNumber": 12,
-    "Status": ""
+    "Status": "KEK123"
   },
   {
     "vehicles": [],
@@ -274,8 +274,15 @@
     "Status": ""
   },
   {
-    "vehicles": [],
-    "AvailableSize": 4,
+    "vehicles": [
+      {
+        "RegNumber": "GER123",
+        "size": 4,
+        "TimeIn": "2021-11-26T10:03:07.1636989+01:00",
+        "Price": 20
+      }
+    ],
+    "AvailableSize": 0,
     "SpotNumber": 42,
     "Status": ""
   },
