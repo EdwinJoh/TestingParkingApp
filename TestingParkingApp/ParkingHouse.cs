@@ -167,16 +167,16 @@ namespace TestingParkingApp
                 ParkingList.Add(new ParkingSpot { SpotNumber = i + 1 });
             }
         }
-        public string MoveVehicle(Vehicle vehicle,ParkingSpot oldspot, int newSpot)
+        public string MoveVehicle(Vehicle vehicle, ParkingSpot oldspot, int newSpot)
         {
-            
+
             if (vehicle == null)
             {
-                return "Vehicle was not found.";
-              
+                message = "Vehicle was not found.";
+
             }
-           
-           
+
+
             if (newSpot != 0 && vehicle.size <= Settings.ParkingSpotSize)
             {
                 if (CheckNewSpot(newSpot, vehicle, out ParkingSpot spot))
@@ -184,7 +184,7 @@ namespace TestingParkingApp
                     RemoveVehicle(vehicle.RegNumber);
                     spot.AddVehicleToList(vehicle);
                     Settings.UpdateParkingList(ParkingList);
-                    return $"Moved vehicle to new parkingspot:{newSpot}";
+                    message = $"Moved vehicle to new parkingspot:{newSpot}";
                 }
             }
             else if (newSpot == 0)
@@ -196,15 +196,21 @@ namespace TestingParkingApp
             {
                 if (newSpot <= Settings.SpacesForLargeVehicle && CheckSpotsInRows(vehicle, newSpot, out ParkingSpot spot))
                 {
-                   oldspot.RemoveLargeVehicle(vehicle);
+                    oldspot.RemoveLargeVehicle(vehicle);
                     spot.Addlargevehicle(vehicle);
                     Settings.UpdateParkingList(ParkingList);
-                    Message.BigVehiceSuccsess("Moved", newSpot, spot);
-                    return $" Moved vehicle to new parking spot {newSpot} - {spot}";
+                    message = $" Moved vehicle to new parking spot {newSpot} - {spot}";
                 }
             }
-            
+            return message;
+
         }                   // Moving vehicle, check if the vehicle is parked here. and move the vehicle if there is space in the new parking spot
+
+        internal void CheckSpotsInRow()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool CheckNewSpot(int newspot, Vehicle vehicle, out ParkingSpot newSpot)    // Check the new spot when moving the vehicle to see if there is enough space in the new spot
         {
             foreach (var spot in ParkingList)

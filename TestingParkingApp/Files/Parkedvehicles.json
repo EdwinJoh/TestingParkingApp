@@ -1,47 +1,54 @@
 [
   {
-    "vehicles": [
-      {
-        "RegNumber": "HEJ333",
-        "size": 4,
-        "TimeIn": "2021-11-24T14:57:07.1907599+01:00",
-        "Price": 20
-      }
-    ],
-    "AvailableSize": 0,
+    "vehicles": [],
+    "AvailableSize": 4,
     "SpotNumber": 1,
     "Status": ""
   },
   {
-    "vehicles": [],
+    "vehicles": [
+      {
+        "RegNumber": "HEJ123",
+        "size": 4,
+        "TimeIn": "2021-11-25T08:47:36.4178374+01:00",
+        "Price": 20
+      }
+    ],
     "AvailableSize": 0,
     "SpotNumber": 2,
-    "Status": "HEJ1233"
-  },
-  {
-    "vehicles": [],
-    "AvailableSize": 0,
-    "SpotNumber": 3,
-    "Status": "HEJ1233"
-  },
-  {
-    "vehicles": [],
-    "AvailableSize": 0,
-    "SpotNumber": 4,
-    "Status": "HEJ1233"
+    "Status": ""
   },
   {
     "vehicles": [
       {
-        "RegNumber": "HEJ1233",
-        "size": 16,
-        "TimeIn": "2021-11-23T07:56:55.1414942+01:00",
-        "Price": 80
+        "RegNumber": "GER123",
+        "size": 4,
+        "TimeIn": "2021-11-26T10:03:07.1636989+01:00",
+        "Price": 20
       }
     ],
     "AvailableSize": 0,
+    "SpotNumber": 3,
+    "Status": ""
+  },
+  {
+    "vehicles": [],
+    "AvailableSize": 4,
+    "SpotNumber": 4,
+    "Status": ""
+  },
+  {
+    "vehicles": [
+      {
+        "RegNumber": "KAK123",
+        "size": 2,
+        "TimeIn": "2021-11-25T08:47:43.8625569+01:00",
+        "Price": 10
+      }
+    ],
+    "AvailableSize": 2,
     "SpotNumber": 5,
-    "Status": "HEJ1233"
+    "Status": ""
   },
   {
     "vehicles": [],
@@ -56,8 +63,15 @@
     "Status": ""
   },
   {
-    "vehicles": [],
-    "AvailableSize": 4,
+    "vehicles": [
+      {
+        "RegNumber": "LAL123",
+        "size": 4,
+        "TimeIn": "2021-11-25T08:47:52.1145169+01:00",
+        "Price": 20
+      }
+    ],
+    "AvailableSize": 0,
     "SpotNumber": 8,
     "Status": ""
   },

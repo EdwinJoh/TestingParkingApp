@@ -17,6 +17,7 @@ namespace TestingParkingApp
         private string vehicleType;
         private string selectedVehicle;
         ParkingHouse house = new ParkingHouse();
+        public Configuration settings { get; set; } = Configuration.ReadSettingsFromFile();
 
 
         public Form1()
@@ -147,8 +148,18 @@ namespace TestingParkingApp
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            grpInput.Visible = true;
-            button = "Remove";
+            if (Count < 1)
+            {
+                grpInput.Visible = true;
+                button = "Remove";
+                Count++;
+            }
+            else
+            {
+                grpInput.Visible = false;
+                button = "";
+                Count--;
+            }
         }
 
         private void btnShow_Click(object sender, EventArgs e)
@@ -182,10 +193,7 @@ namespace TestingParkingApp
             grpMove.Visible = true;
             foreach (ParkingSpot spot in house.ParkingList)
             {
-                if (spot.AvailableSize == 4)
-                {
-                    Pspots.Items.Add(spot.SpotNumber);
-                }
+
                 foreach (Vehicle vehicle in spot.vehicles)
                 {
                     listveh.Items.Add(vehicle.RegNumber);
@@ -226,7 +234,11 @@ namespace TestingParkingApp
             selectedItem = (string)listveh.SelectedItem;
             selectedIndex = (int)Pspots.SelectedItem;
             (Vehicle found, ParkingSpot oldspot) = house.ExistRegnumber(selectedItem);
-            house.MoveVehicle(found, oldspot,selectedIndex);
+            string move = house.MoveVehicle(found, oldspot, selectedIndex);
+            MessageBox.Show(move);
+            listveh = null;
+            Pspots = null;
+            grpMove.Visible = false;
         }
 
 
@@ -238,7 +250,19 @@ namespace TestingParkingApp
 
         private void listveh_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string selectedvehicle = listveh.SelectedItem.ToString();
+            (Vehicle vehicle, ParkingSpot spot) = house.ExistRegnumber(selectedvehicle);
+            foreach (ParkingSpot item in house.ParkingList)
+            {
+                if (item.AvailableSize >= vehicle.size && item.AvailableSize <= vehicle.size)
+                {
+                    Pspots.Items.Add(item.SpotNumber);
+                }
+                else if (vehicle.size > settings.ParkingSpotSize)
+                {
+                    house.CheckSpotsInRow();
+                }
+            }
 
         }
     }
